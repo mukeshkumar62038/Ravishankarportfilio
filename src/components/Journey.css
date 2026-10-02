@@ -1,0 +1,198 @@
+/* ==========================================================================
+   JOURNEY / ROADMAP COMPONENT STYLES
+   ========================================================================== */
+
+.journey-section {
+  padding: 100px 0;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(255, 1, 79, 0.2) 0%, rgba(255, 1, 79, 0.8) 50%, rgba(0, 210, 255, 0.4) 100%);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  display: flex;
+  width: 100%;
+}
+
+.timeline-item.left {
+  justify-content: flex-start;
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+/* Center Node */
+.timeline-node {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #14171e;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  transition: var(--transition-smooth);
+}
+
+.timeline-node-inner {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-item:hover .timeline-node {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 20px rgba(255, 1, 79, 0.6);
+}
+
+.timeline-item:hover .timeline-node-inner {
+  color: var(--accent-red);
+}
+
+.active-milestone .timeline-node {
+  border-color: var(--accent-red);
+  background: var(--accent-red);
+  box-shadow: 0 0 25px rgba(255, 1, 79, 0.8);
+}
+
+.active-milestone .timeline-node-inner {
+  color: #ffffff;
+}
+
+/* Timeline Card */
+.timeline-card {
+  width: calc(50% - 45px);
+  padding: 28px;
+  border-radius: 18px;
+}
+
+.timeline-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.timeline-year {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-red);
+}
+
+.milestone-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.milestone-badge.completed {
+  background: rgba(0, 242, 152, 0.1);
+  color: var(--accent-green);
+  border: 1px solid rgba(0, 242, 152, 0.3);
+}
+
+.milestone-badge.current-focus {
+  background: var(--accent-red-subtle);
+  color: var(--accent-red);
+  border: 1px solid var(--accent-red);
+  animation: pulseGlow 2.5s infinite;
+}
+
+.milestone-badge.the-ultimate-target {
+  background: rgba(0, 210, 255, 0.1);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+.milestone-badge.future-horizon {
+  background: rgba(157, 78, 221, 0.1);
+  color: var(--accent-purple);
+  border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.timeline-stage-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.timeline-tag-text {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.timeline-points-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-pt {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.pt-icon {
+  color: var(--accent-red);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-spine {
+    left: 20px;
+  }
+  .timeline-node {
+    left: 20px;
+  }
+  .timeline-item.left,
+  .timeline-item.right {
+    justify-content: flex-start;
+    padding-left: 55px;
+  }
+  .timeline-card {
+    width: 100%;
+  }
+}

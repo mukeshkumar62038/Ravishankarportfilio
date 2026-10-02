@@ -1,0 +1,61 @@
+/* ==========================================================================
+   APP GLOBAL WRAPPER & AMBIENT EFFECTS
+   ========================================================================== */
+
+.portfolio-app {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+}
+
+/* Ambient Radial Glow Orbs */
+.bg-glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  opacity: 0.18;
+}
+
+.orb-1 {
+  top: -10%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #ff014f 0%, transparent 70%);
+  animation: floatOrb 14s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  top: 40%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #00d2ff 0%, transparent 70%);
+  animation: floatOrb 18s ease-in-out infinite alternate-reverse;
+}
+
+.orb-3 {
+  bottom: 5%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #9d4edd 0%, transparent 70%);
+  animation: floatOrb 20s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(40px, 30px) scale(1.1);
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}

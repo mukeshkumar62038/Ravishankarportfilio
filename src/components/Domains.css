@@ -1,0 +1,107 @@
+/* ==========================================================================
+   DOMAINS ("WHAT I DO") COMPONENT STYLES
+   ========================================================================== */
+
+.domains-section {
+  padding: 100px 0;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+.domain-card {
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.domain-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.domain-card:hover::before {
+  opacity: 1;
+}
+
+.domain-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.domain-icon-box {
+  color: var(--accent-red);
+  transition: var(--transition-smooth);
+}
+
+.domain-card:hover .domain-icon-box {
+  transform: scale(1.1);
+  color: #ff2a6d;
+}
+
+.domain-tag-mini {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.domain-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.domain-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.domain-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-red);
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.domain-arrow {
+  transition: transform 0.25s ease;
+}
+
+.domain-card:hover .domain-arrow {
+  transform: translate(3px, -3px);
+}
+
+.domain-card:hover .domain-footer-link {
+  color: #ff3377;
+}
+
+@media (max-width: 768px) {
+  .domains-grid {
+    grid-template-columns: 1fr;
+  }
+}
